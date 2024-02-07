@@ -1,4 +1,7 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<math.h>
+#include <iomanip>
+#include <string>
 using namespace std;
 
 int gcd(int a,int b)
@@ -8,14 +11,15 @@ int gcd(int a,int b)
     return gcd(b,a%b);
 }
 
+int lcm(int a, int b)
+{
+    return (a*b)/gcd(a,b);
+}
+
 int main()
 {
-    l1:
     int a,b;
-    cout<< "Enter two numbers: ";
-    cin>> a>>b;
-    int k=gcd(a,b);
-    cout<< "GCD of given two numbers is: "<< k<< "\n";
-    goto l1;
-    return 0;
-}
+    cout<< "Enter the numbers: ";
+    cin>> a>> b;
+    cout<< "Lcm of given numbers is "<< lcm(a,b); 
+}   
