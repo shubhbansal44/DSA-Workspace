@@ -26,7 +26,7 @@ int main()
     }
     vector<vector<int>> ans(c,vector<int> (r));
     transpose(mat,ans,r,c);
-    cout<< "Transposed of a given matrix is: \n";
+    cout<< "Transpose of a given matrix is: \n";
     for(int i=0; i<r*c; i++)
     {
         int r1=i/r,c1=i%r;
