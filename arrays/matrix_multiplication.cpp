@@ -1,7 +1,4 @@
-#include<iostream>
-#include<math.h>
-#include <iomanip>
-#include <string>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main()
@@ -12,20 +9,20 @@ int main()
     {
         cout<< "no";
     }
-    int matA[r1][c1],matB[r2][c2];
-    cout<< "enter matA\n";
+    vector<vector<int>> matA(r1,vector<int> (c1));vector<vector<int>> matB(r2,vector<int> (c2));
+    cout<< "Enter matA\n";
     for(int i=0; i<r1*c1; i++)
     {
         int r=i/c1,c=i%c1;
         cin>> matA[r][c];
     }
-    cout<< "enter matB\n";
+    cout<< "Enter matB\n";
     for(int i=0; i<r2*c2; i++)
     {
         int r=i/c2,c=i%c2;
         cin>> matB[r][c];
     }
-    int ans[r1][c2]={};
+    vector<vector<int>> ans(r1,vector<int> (c2));
     for(int i=0; i<r1*c2; i++)
     {
         int r=i/c2;
@@ -40,7 +37,7 @@ int main()
     {
         int r=i/c2;
         int c=i%c2;
-        if(i%c2==0)
+        if(i%c2==0&&i!=0)
         {
             cout<< "\n";
         }
