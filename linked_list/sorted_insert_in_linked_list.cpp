@@ -16,25 +16,22 @@ class linked_list
 linked_list *insert(linked_list *head,int value)
 {
     linked_list *ptr=new linked_list(value);
+    if(head==NULL)
+    {
+        return ptr;
+    }
     if(head->data>value)
     {
         ptr->next=head;return ptr;
     }
     linked_list *nhead=head;
-    while(nhead->next!=NULL)
+    while(nhead->next!=NULL&&nhead->next->data<value)
     {
-        if(nhead->data<=value&&nhead->next->data>value)
-        {
-            break;
-        }
         nhead=nhead->next;
     }
-    if(nhead->next==NULL)
-    {nhead->next=ptr;return head;}
     ptr->next=nhead->next;
     nhead->next=ptr;
     return head;
-
 }
 
 void prtls(linked_list *ptr)
