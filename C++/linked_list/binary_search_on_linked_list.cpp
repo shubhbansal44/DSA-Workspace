@@ -58,6 +58,7 @@ int main()
     int n;
     cout<< "Enter Number of Nodes: ";
     cin>> n;
+    cout<< "Enter Nodes Data: ";
     for(int i=0; i<n; i++)
     {
         int value;
