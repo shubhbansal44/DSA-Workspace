@@ -4,6 +4,25 @@
 #include <string>
 using namespace std;
 
+string is_anagram(string a,string b)
+{
+    if(a.length()!=b.length())
+    return "NO! given strings are not anagram";
+    int freq_x[26]={0},freq_y[26]={0};
+    for(int i=0; i<a.length(); i++)
+    {
+        int x=a[i]-'a',y=b[i]-'a';
+        freq_x[x]++;
+        freq_y[y]++;
+    }
+    for(int i=0; i<26; i++)
+    {
+        if(freq_x[i]!=freq_y[i])
+        return "NO! given strings are not anagram";
+    }
+    return "YES! given strings are anagram";
+}
+
 int main()
 {
     int n;
@@ -16,35 +35,6 @@ int main()
         cin>> a;
         cout<< "Enter str(b): ";
         cin>> b;
-        if(a=="ananya" && b=="shubh")
-        {
-            cout<< "YES!!";
-            break;
-        }
-        if(a.length()==b.length())
-        {
-            int u=0;
-            for(int i=0; i<b.length(); i++)
-            {
-                if(a[u]==b[i])
-                {
-                    u++;
-                    i=-1;
-                }
-            }
-            if(u==a.length())
-            {
-                cout<< "YES\n";
-            }
-            else
-            {
-                cout<< "NO\n";
-            }
-        }
-        else
-        {
-            cout<< "NO\n";
-        }
-    }
-    
+        cout<< is_anagram(a,b);
+    }      
 }
