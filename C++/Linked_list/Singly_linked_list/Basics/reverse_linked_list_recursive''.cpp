@@ -25,7 +25,7 @@ linked_list *insert(linked_list *head,int t)
     return head;
 }
 
-int reverse(linked_list *past,linked_list *present,linked_list *future)
+void reverse(linked_list *past,linked_list *present,linked_list *future)
 {
     present->next=past;
     if(future!=NULL)

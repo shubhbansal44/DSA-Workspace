@@ -18,7 +18,6 @@ class Queue
     public:
     int size,capacity;
     linked_list *head;
-    // linked_list *front;
     linked_list *tail;
     Queue(int x)
     {

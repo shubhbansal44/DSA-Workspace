@@ -18,19 +18,22 @@ int solve(int a,char x,int b)
 
 int calc(string exp)
 {
+    stringstream s(exp);
     stack<int> space;
-    for(int i=exp.length()-1; i>=0; i--)
+    string a;
+    while(s<< a)
     {
-        char x=exp[i];
-        if(isdigit(x))
-        {space.push((x-'0'));}
-        else
-        {
-            int a=space.top();space.pop();
-            int b=space.top();space.pop();
-            int z=solve(b,x,a);
-            space.push(z);
-        }
+        // char x=exp[i];
+        // if(isdigit(x))
+        // {space.push((x-'0'));}
+        // else
+        // {
+        //     int a=space.top();space.pop();
+        //     int b=space.top();space.pop();
+        //     int z=solve(b,x,a);
+        //     space.push(z);
+        // }
+        if()
     }
     return space.top();
 }
